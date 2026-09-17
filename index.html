@@ -1,0 +1,1477 @@
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأستاذ علي عماوي - مدرسة ارحابا الثانوية الشاملة للبنين</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --primary-light: #14b8a6;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-lighter: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #475569;
+  --success: #10b981;
+  --danger: #ef4444;
+  --info: #3b82f6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Tajawal', sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+.bg-pattern {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(13,148,136,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(13,148,136,0.05) 0%, transparent 50%);
+}
+.bg-pattern::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(13,148,136,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(13,148,136,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove { 0% { transform: translate(0,0); } 100% { transform: translate(50px,50px); } }
+
+.particle {
+  position: fixed; border-radius: 50%; pointer-events: none;
+  animation: floatParticle linear infinite; z-index: 0;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; } 90% { opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+}
+
+.main-header {
+  background: linear-gradient(135deg, rgba(15,23,42,0.97), rgba(30,41,59,0.97));
+  backdrop-filter: blur(20px); border-bottom: 1px solid rgba(13,148,136,0.3);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-glow { text-shadow: 0 0 30px rgba(13,148,136,0.5); }
+
+.nav-item {
+  position: relative; padding: 10px 20px; border-radius: 12px; cursor: pointer;
+  transition: all 0.3s ease; font-weight: 500; font-size: 14px;
+}
+.nav-item:hover { background: rgba(13,148,136,0.15); color: var(--primary-light); }
+.nav-item.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white; box-shadow: 0 4px 15px rgba(13,148,136,0.4);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9));
+  backdrop-filter: blur(20px); border: 1px solid rgba(71,85,105,0.5);
+  border-radius: 16px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); overflow: hidden;
+}
+.glass-card:hover {
+  border-color: rgba(13,148,136,0.5); transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(13,148,136,0.1);
+}
+
+.card-shine {
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(13,148,136,0.05) 50%, transparent 60%);
+  animation: cardShine 5s ease-in-out infinite; pointer-events: none;
+}
+@keyframes cardShine { 0%,100% { transform: translateX(-100%) rotate(0deg); } 50% { transform: translateX(100%) rotate(0deg); } }
+
+.stat-card {
+  background: linear-gradient(145deg, rgba(30,41,59,0.8), rgba(15,23,42,0.8));
+  border: 1px solid rgba(71,85,105,0.4); border-radius: 16px; padding: 24px;
+  position: relative; overflow: hidden; transition: all 0.3s ease;
+}
+.stat-card:hover { border-color: rgba(13,148,136,0.4); transform: translateY(-2px); }
+.stat-card::before {
+  content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(13,148,136,0.15), transparent); border-radius: 0 0 0 80px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;
+  border: none; padding: 12px 28px; border-radius: 12px; cursor: pointer;
+  font-family: 'Tajawal', sans-serif; font-weight: 700; font-size: 15px;
+  transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(13,148,136,0.4); }
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), #d97706); color: white;
+  border: none; padding: 10px 22px; border-radius: 10px; cursor: pointer;
+  font-family: 'Tajawal', sans-serif; font-weight: 700; font-size: 14px;
+  transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,158,11,0.4); }
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger), #dc2626); color: white;
+  border: none; padding: 8px 18px; border-radius: 10px; cursor: pointer;
+  font-family: 'Tajawal', sans-serif; font-weight: 600; font-size: 13px;
+  transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 5px;
+}
+.btn-danger:hover { box-shadow: 0 4px 15px rgba(239,68,68,0.4); }
+
+.btn-ghost {
+  background: rgba(71,85,105,0.3); color: var(--text-secondary);
+  border: 1px solid rgba(71,85,105,0.5); padding: 8px 18px; border-radius: 10px;
+  cursor: pointer; font-family: 'Tajawal', sans-serif; font-weight: 600; font-size: 13px;
+  transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 5px;
+}
+.btn-ghost:hover { background: rgba(71,85,105,0.5); color: var(--text-primary); }
+
+.input-field {
+  background: rgba(15,23,42,0.8); border: 1px solid rgba(71,85,105,0.6);
+  color: var(--text-primary); padding: 12px 18px; border-radius: 12px;
+  font-family: 'Tajawal', sans-serif; font-size: 15px; width: 100%;
+  transition: all 0.3s ease; outline: none;
+}
+.input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,148,136,0.2); }
+.input-field::placeholder { color: var(--text-secondary); }
+
+.textarea-field {
+  background: rgba(15,23,42,0.8); border: 1px solid rgba(71,85,105,0.6);
+  color: var(--text-primary); padding: 12px 18px; border-radius: 12px;
+  font-family: 'Tajawal', sans-serif; font-size: 15px; width: 100%;
+  min-height: 100px; resize: vertical; transition: all 0.3s ease; outline: none;
+}
+.textarea-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,148,136,0.2); }
+
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 200;
+  display: none; align-items: center; justify-content: center; padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+.modal-overlay.active { display: flex; }
+.modal-content {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-dark));
+  border: 1px solid rgba(71,85,105,0.6); border-radius: 20px; padding: 32px;
+  max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto;
+  animation: modalSlide 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes modalSlide { from { opacity: 0; transform: scale(0.8) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.tab-btn {
+  padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 600;
+  font-size: 14px; transition: all 0.3s ease; background: transparent;
+  color: var(--text-secondary); border: 1px solid transparent;
+  font-family: 'Tajawal', sans-serif; display: inline-flex; align-items: center; gap: 6px;
+}
+.tab-btn:hover { background: rgba(13,148,136,0.1); color: var(--text-primary); }
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white; border-color: transparent; box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+}
+
+.badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.badge-primary { background: rgba(13,148,136,0.2); color: var(--primary-light); }
+.badge-accent { background: rgba(245,158,11,0.2); color: var(--accent-light); }
+.badge-info { background: rgba(59,130,246,0.2); color: #60a5fa; }
+.badge-danger { background: rgba(239,68,68,0.2); color: #f87171; }
+
+.toast-container {
+  position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 300;
+  display: flex; flex-direction: column; gap: 10px; pointer-events: none;
+}
+.toast {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
+  border: 1px solid rgba(71,85,105,0.6); padding: 14px 24px; border-radius: 14px;
+  font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: toastIn 0.4s ease, toastOut 0.4s ease 2.6s forwards; pointer-events: auto;
+}
+@keyframes toastIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-20px); } }
+
+.file-item {
+  background: rgba(15,23,42,0.6); border: 1px solid rgba(71,85,105,0.4);
+  border-radius: 12px; padding: 14px 18px; display: flex; align-items: center;
+  gap: 12px; transition: all 0.3s ease;
+}
+.file-item:hover { border-color: rgba(13,148,136,0.4); background: rgba(13,148,136,0.05); }
+
+.quiz-option {
+  background: rgba(15,23,42,0.6); border: 2px solid rgba(71,85,105,0.4);
+  border-radius: 12px; padding: 14px 18px; cursor: pointer; transition: all 0.3s ease;
+  font-family: 'Tajawal', sans-serif; font-size: 15px; font-weight: 500; text-align: right;
+}
+.quiz-option:hover { border-color: var(--primary); background: rgba(13,148,136,0.1); }
+.quiz-option.selected { border-color: var(--accent); background: rgba(245,158,11,0.15); }
+.quiz-option.correct { border-color: var(--success); background: rgba(16,185,129,0.15); }
+.quiz-option.wrong { border-color: var(--danger); background: rgba(239,68,68,0.15); }
+
+.comment-card {
+  background: rgba(15,23,42,0.5); border: 1px solid rgba(71,85,105,0.3);
+  border-radius: 14px; padding: 16px; transition: all 0.3s ease;
+}
+.comment-card:hover { border-color: rgba(13,148,136,0.3); }
+
+.gallery-item {
+  border-radius: 12px; overflow: hidden; position: relative; cursor: pointer;
+  transition: all 0.3s ease;
+}
+.gallery-item:hover { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.gallery-item img { width: 100%; height: 200px; object-fit: cover; }
+.gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 12px; }
+
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--success);
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+
+.counter {
+  font-size: 36px; font-weight: 900;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.section-content { animation: sectionFade 0.5s ease; }
+@keyframes sectionFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.mobile-nav {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98));
+  backdrop-filter: blur(20px); border-top: 1px solid rgba(71,85,105,0.5);
+  padding: 8px 0; z-index: 100;
+}
+.mobile-nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 8px; color: var(--text-secondary); font-size: 11px; font-weight: 600;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.mobile-nav-item.active { color: var(--primary-light); }
+.mobile-nav-item i { font-size: 20px; }
+
+.lightbox {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9); z-index: 250; display: none;
+  align-items: center; justify-content: center; cursor: pointer;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90%; max-height: 90vh; border-radius: 12px; }
+
+select.input-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: left 14px center; padding-left: 36px;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(13,148,136,0.2) 0%, rgba(245,158,11,0.1) 50%, rgba(59,130,246,0.1) 100%);
+}
+
+@media (max-width: 768px) {
+  .mobile-nav { display: flex; justify-content: space-around; }
+  .desktop-nav { display: none !important; }
+  .main-content { padding-bottom: 80px !important; }
+  .hero-title { font-size: 24px !important; }
+  .stat-card { padding: 16px; }
+  .counter { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div id="particles"></div>
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="صورة">
+</div>
+
+<header class="main-header">
+  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 15px rgba(13,148,136,0.4);">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+      <div>
+        <div style="font-size:18px;font-weight:800;" class="logo-glow">الأستاذ علي عماوي</div>
+        <div style="font-size:12px;color:var(--text-secondary);font-weight:500;">مدرسة ارحابا الثانوية الشاملة للبنين</div>
+        <div style="font-size:11px;color:var(--primary-light);font-weight:500;">وزارة التربية والتعليم والموارد البشرية - لواء المزار الشمالي</div>
+      </div>
+    </div>
+    <nav class="desktop-nav" style="display:flex;align-items:center;gap:6px;">
+      <div class="nav-item active" onclick="switchSection('dashboard')" data-section="dashboard">
+        <i class="fas fa-home" style="margin-left:6px;"></i> الرئيسية
+      </div>
+      <div class="nav-item" onclick="switchSection('classes')" data-section="classes">
+        <i class="fas fa-school" style="margin-left:6px;"></i> الصفوف
+      </div>
+      <div class="nav-item" onclick="switchSection('interact')" data-section="interact">
+        <i class="fas fa-comments" style="margin-left:6px;"></i> التفاعل
+      </div>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="pulse-dot"></div>
+      <span style="font-size:13px;color:var(--success);font-weight:600;">متصل</span>
+    </div>
+  </div>
+</header>
+
+<main class="main-content" style="max-width:1400px;margin:0 auto;padding:24px;position:relative;z-index:1;">
+
+  <!-- Dashboard Section -->
+  <section id="section-dashboard" class="section-content">
+    <div class="glass-card" style="padding:40px 32px;margin-bottom:28px;position:relative;overflow:hidden;">
+      <div class="card-shine"></div>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(13,148,136,0.15),rgba(245,158,11,0.08));pointer-events:none;"></div>
+      <div style="position:relative;z-index:1;">
+        <div style="font-size:32px;font-weight:900;margin-bottom:8px;" class="hero-title">
+          مرحباً بك، <span style="background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">الأستاذ علي</span>
+        </div>
+        <div style="font-size:16px;color:var(--text-secondary);font-weight:500;max-width:600px;">
+          منصة تعليمية متكاملة لإدارة الصفوف والمواد والمحتوى التعليمي والتفاعل مع الطلاب وأولياء الأمور
+        </div>
+        <div style="margin-top:12px;padding:10px 16px;background:rgba(13,148,136,0.1);border:1px solid rgba(13,148,136,0.2);border-radius:10px;display:inline-flex;align-items:center;gap:8px;">
+          <i class="fas fa-school" style="color:var(--primary-light);"></i>
+          <span style="font-size:13px;color:var(--text-secondary);">مدرسة ارحابا الثانوية الشاملة للبنين</span>
+          <span style="color:var(--border);">|</span>
+          <span style="font-size:13px;color:var(--text-secondary);">لواء المزار الشمالي</span>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="switchSection('classes');openModal('classModal')">
+            <i class="fas fa-plus"></i> إضافة صف جديد
+          </button>
+          <button class="btn-accent" onclick="switchSection('interact')">
+            <i class="fas fa-comment-dots"></i> التفاعل مع الأولياء
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px;">
+      <div class="stat-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(13,148,136,0.15);display:flex;align-items:center;justify-content:center;color:var(--primary-light);font-size:20px;">
+            <i class="fas fa-school"></i>
+          </div>
+          <span class="badge badge-primary">الصفوف</span>
+        </div>
+        <div class="counter" id="stat-classes">0</div>
+        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">صف دراسي</div>
+      </div>
+      <div class="stat-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;color:var(--accent-light);font-size:20px;">
+            <i class="fas fa-book"></i>
+          </div>
+          <span class="badge badge-accent">المواد</span>
+        </div>
+        <div class="counter" id="stat-subjects">0</div>
+        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">مادة تعليمية</div>
+      </div>
+      <div class="stat-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;font-size:20px;">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <span class="badge badge-info">المحتوى</span>
+        </div>
+        <div class="counter" id="stat-content">0</div>
+        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">ملف ومحتوى</div>
+      </div>
+      <div class="stat-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;color:#34d399;font-size:20px;">
+            <i class="fas fa-comments"></i>
+          </div>
+          <span class="badge" style="background:rgba(16,185,129,0.2);color:#34d399;">التفاعل</span>
+        </div>
+        <div class="counter" id="stat-comments">0</div>
+        <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">تعليق وتفاعل</div>
+      </div>
+    </div>
+
+    <div class="glass-card" style="padding:24px;">
+      <h3 style="font-size:18px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+        <i class="fas fa-clock" style="color:var(--primary-light);"></i> آخر النشاطات
+      </h3>
+      <div id="recentActivity" style="display:flex;flex-direction:column;gap:10px;">
+        <div style="text-align:center;padding:30px;color:var(--text-secondary);">
+          <i class="fas fa-inbox" style="font-size:32px;margin-bottom:10px;display:block;"></i>
+          لا توجد نشاطات بعد - ابدأ بإضافة صف ومادة
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="section-classes" class="section-content" style="display:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+      <h2 style="font-size:24px;font-weight:900;display:flex;align-items:center;gap:10px;">
+        <i class="fas fa-school" style="color:var(--primary-light);"></i> إدارة الصفوف والمواد
+      </h2>
+      <button class="btn-primary" onclick="openModal('classModal')">
+        <i class="fas fa-plus"></i> إضافة صف
+      </button>
+    </div>
+    <div id="classesContainer" style="display:flex;flex-direction:column;gap:20px;">
+      <div style="text-align:center;padding:60px 20px;color:var(--text-secondary);">
+        <i class="fas fa-school" style="font-size:48px;margin-bottom:16px;display:block;opacity:0.3;"></i>
+        <div style="font-size:18px;font-weight:700;margin-bottom:8px;">لا توجد صفوف بعد</div>
+        <div style="font-size:14px;">ابدأ بإضافة صف دراسي جديد</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subject Detail Section -->
+  <section id="section-subject" class="section-content" style="display:none;">
+    <div id="subjectDetail"></div>
+  </section>
+
+  <!-- Interact Section -->
+  <section id="section-interact" class="section-content" style="display:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+      <h2 style="font-size:24px;font-weight:900;display:flex;align-items:center;gap:10px;">
+        <i class="fas fa-comments" style="color:var(--primary-light);"></i> التفاعل مع الطلاب وأولياء الأمور
+      </h2>
+    </div>
+    <div class="glass-card" style="padding:24px;margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;">ع</div>
+        <div>
+          <div style="font-weight:700;font-size:15px;">الأستاذ علي عماوي</div>
+          <div style="font-size:12px;color:var(--text-secondary);">معلم - مدرسة ارحابا الثانوية الشاملة للبنين</div>
+        </div>
+      </div>
+      <textarea class="textarea-field" id="postContent" placeholder="شارك إعلاناً أو ملاحظة مع الطلاب وأولياء الأمور..."></textarea>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;gap:8px;">
+          <select class="input-field" id="postType" style="width:auto;padding:8px 36px 8px 14px;font-size:13px;">
+            <option value="announcement">📢 إعلان</option>
+            <option value="note">📝 ملاحظة</option>
+            <option value="achievement">🏆 إنجاز</option>
+            <option value="reminder">⏰ تذكير</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="addPost()" style="font-size:14px;padding:10px 22px;">
+          <i class="fas fa-paper-plane"></i> نشر
+        </button>
+      </div>
+    </div>
+    <div id="postsContainer" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="text-align:center;padding:40px;color:var(--text-secondary);">
+        <i class="fas fa-comment-slash" style="font-size:36px;margin-bottom:12px;display:block;opacity:0.3;"></i>
+        <div style="font-size:16px;font-weight:600;">لا توجد منشورات بعد</div>
+        <div style="font-size:13px;">ابدأ بنشر إعلان أو ملاحظة</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav">
+  <div class="mobile-nav-item active" onclick="switchSection('dashboard')" data-section="dashboard">
+    <i class="fas fa-home"></i><span>الرئيسية</span>
+  </div>
+  <div class="mobile-nav-item" onclick="switchSection('classes')" data-section="classes">
+    <i class="fas fa-school"></i><span>الصفوف</span>
+  </div>
+  <div class="mobile-nav-item" onclick="switchSection('interact')" data-section="interact">
+    <i class="fas fa-comments"></i><span>التفاعل</span>
+  </div>
+</div>
+
+<!-- Add Class Modal -->
+<div class="modal-overlay" id="classModal">
+  <div class="modal-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-plus-circle" style="color:var(--primary-light);margin-left:8px;"></i>إضافة صف جديد</h3>
+      <button onclick="closeModal('classModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">اسم الصف</label>
+        <input type="text" class="input-field" id="className" placeholder="مثال: الصف العاشر">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">الشعبة</label>
+        <input type="text" class="input-field" id="classSection" placeholder="مثال: أ، ب، ج">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">ملاحظات (اختياري)</label>
+        <textarea class="textarea-field" id="classNotes" placeholder="أي ملاحظات إضافية عن الصف..." style="min-height:70px;"></textarea>
+      </div>
+      <button class="btn-primary" onclick="addClass()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> إضافة الصف
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Subject Modal -->
+<div class="modal-overlay" id="subjectModal">
+  <div class="modal-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-book-medical" style="color:var(--accent);margin-left:8px;"></i>إضافة مادة جديدة</h3>
+      <button onclick="closeModal('subjectModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="hidden" id="subjectClassId">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">اسم المادة</label>
+        <input type="text" class="input-field" id="subjectName" placeholder="مثال: الرياضيات">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">اللون</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;" id="colorPicker">
+          <div onclick="selectColor('#0d9488')" style="width:36px;height:36px;border-radius:10px;background:#0d9488;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#0d9488"></div>
+          <div onclick="selectColor('#f59e0b')" style="width:36px;height:36px;border-radius:10px;background:#f59e0b;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#f59e0b"></div>
+          <div onclick="selectColor('#3b82f6')" style="width:36px;height:36px;border-radius:10px;background:#3b82f6;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#3b82f6"></div>
+          <div onclick="selectColor('#ef4444')" style="width:36px;height:36px;border-radius:10px;background:#ef4444;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#ef4444"></div>
+          <div onclick="selectColor('#8b5cf6')" style="width:36px;height:36px;border-radius:10px;background:#8b5cf6;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#8b5cf6"></div>
+          <div onclick="selectColor('#ec4899')" style="width:36px;height:36px;border-radius:10px;background:#ec4899;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#ec4899"></div>
+          <div onclick="selectColor('#10b981')" style="width:36px;height:36px;border-radius:10px;background:#10b981;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#10b981"></div>
+          <div onclick="selectColor('#f97316')" style="width:36px;height:36px;border-radius:10px;background:#f97316;cursor:pointer;border:3px solid transparent;" class="color-opt" data-color="#f97316"></div>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">وصف المادة (اختياري)</label>
+        <textarea class="textarea-field" id="subjectDesc" placeholder="وصف مختصر للمادة..." style="min-height:70px;"></textarea>
+      </div>
+      <button class="btn-primary" onclick="addSubject()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> إضافة المادة
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Summary Modal -->
+<div class="modal-overlay" id="summaryModal">
+  <div class="modal-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-file-upload" style="color:var(--primary-light);margin-left:8px;"></i>إضافة ملخص / ملف</h3>
+      <button onclick="closeModal('summaryModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="hidden" id="summarySubjectId">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">عنوان الملخص</label>
+        <input type="text" class="input-field" id="summaryTitle" placeholder="مثال: ملخص الوحدة الأولى">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">النوع</label>
+        <select class="input-field" id="summaryType">
+          <option value="summary">📄 ملخص</option>
+          <option value="worksheet">📋 ورقة عمل</option>
+          <option value="exam">📝 امتحان سابق</option>
+          <option value="solution">✅ حلول</option>
+          <option value="other">📎 أخرى</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">الوصف (اختياري)</label>
+        <textarea class="textarea-field" id="summaryDesc" placeholder="وصف مختصر..." style="min-height:60px;"></textarea>
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">رفع ملف (اختياري)</label>
+        <input type="file" id="summaryFile" style="display:none;" onchange="handleFileUpload(this,'summaryFileName')">
+        <div onclick="document.getElementById('summaryFile').click()" style="background:rgba(15,23,42,0.8);border:2px dashed rgba(71,85,105,0.6);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(71,85,105,0.6)'">
+          <i class="fas fa-cloud-upload-alt" style="font-size:28px;color:var(--primary-light);display:block;margin-bottom:8px;"></i>
+          <div style="font-size:14px;font-weight:600;">اضغط لرفع ملف</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;" id="summaryFileName">لم يتم اختيار ملف</div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="addSummary()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> إضافة الملخص
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Media Modal -->
+<div class="modal-overlay" id="imageModal">
+  <div class="modal-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-image" style="color:var(--accent);margin-left:8px;"></i>إضافة صورة / فيديو</h3>
+      <button onclick="closeModal('imageModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="hidden" id="imageSubjectId">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">النوع</label>
+        <select class="input-field" id="mediaType">
+          <option value="image">🖼️ صورة</option>
+          <option value="video">🎬 فيديو (رابط)</option>
+          <option value="achievement">🏆 إنجاز</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">العنوان</label>
+        <input type="text" class="input-field" id="mediaTitle" placeholder="مثال: رحلة علمية">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">الوصف (اختياري)</label>
+        <textarea class="textarea-field" id="mediaDesc" placeholder="وصف الصورة أو الفيديو..." style="min-height:60px;"></textarea>
+      </div>
+      <div id="imageUploadArea">
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">رفع صورة</label>
+        <input type="file" id="mediaFile" accept="image/*" style="display:none;" onchange="handleImageUpload(this)">
+        <div onclick="document.getElementById('mediaFile').click()" style="background:rgba(15,23,42,0.8);border:2px dashed rgba(71,85,105,0.6);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(71,85,105,0.6)'">
+          <i class="fas fa-cloud-upload-alt" style="font-size:28px;color:var(--accent);display:block;margin-bottom:8px;"></i>
+          <div style="font-size:14px;font-weight:600;">اضغط لرفع صورة</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;" id="mediaFileName">لم يتم اختيار صورة</div>
+        </div>
+        <div id="imagePreview" style="display:none;margin-top:12px;text-align:center;">
+          <img id="imgPreview" style="max-width:100%;max-height:150px;border-radius:10px;">
+        </div>
+      </div>
+      <div id="videoUrlArea" style="display:none;">
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">رابط الفيديو</label>
+        <input type="url" class="input-field" id="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
+      </div>
+      <button class="btn-primary" onclick="addMedia()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> إضافة
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Quiz Modal -->
+<div class="modal-overlay" id="quizModal">
+  <div class="modal-content" style="max-width:700px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-question-circle" style="color:var(--info);margin-left:8px;"></i>إنشاء اختبار قصير</h3>
+      <button onclick="closeModal('quizModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="hidden" id="quizSubjectId">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">عنوان الاختبار</label>
+        <input type="text" class="input-field" id="quizTitle" placeholder="مثال: اختبار الوحدة الثانية">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">مدة الاختبار (بالدقائق)</label>
+        <input type="number" class="input-field" id="quizDuration" value="10" min="1" max="60">
+      </div>
+      <div id="questionsContainer" style="display:flex;flex-direction:column;gap:20px;"></div>
+      <button class="btn-ghost" onclick="addQuestionField()" style="align-self:flex-start;">
+        <i class="fas fa-plus"></i> إضافة سؤال
+      </button>
+      <button class="btn-primary" onclick="addQuiz()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> إنشاء الاختبار
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Take Quiz Modal -->
+<div class="modal-overlay" id="takeQuizModal">
+  <div class="modal-content" style="max-width:700px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;" id="takeQuizTitle">الاختبار</h3>
+      <button onclick="closeModal('takeQuizModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="takeQuizContent"></div>
+    <div style="margin-top:20px;display:flex;gap:10px;">
+      <button class="btn-primary" onclick="submitQuiz()" style="flex:1;justify-content:center;">
+        <i class="fas fa-check-double"></i> تسليم الاختبار
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Note Modal -->
+<div class="modal-overlay" id="noteModal">
+  <div class="modal-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <h3 style="font-size:20px;font-weight:800;"><i class="fas fa-sticky-note" style="color:var(--accent);margin-left:8px;"></i>إضافة تلخيص / ملاحظة</h3>
+      <button onclick="closeModal('noteModal')" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer;padding:4px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="hidden" id="noteSubjectId">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">عنوان التلخيص</label>
+        <input type="text" class="input-field" id="noteTitle" placeholder="مثال: أهم النقاط - الفصل الأول">
+      </div>
+      <div>
+        <label style="font-size:14px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">المحتوى</label>
+        <textarea class="textarea-field" id="noteContent" placeholder="اكتب التلخيص أو الملاحظة هنا..." style="min-height:180px;"></textarea>
+      </div>
+      <button class="btn-primary" onclick="addNote()" style="width:100%;justify-content:center;">
+        <i class="fas fa-check"></i> حفظ التلخيص
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+let appData = { classes: [], posts: [], activities: [] };
+let selectedSubjectColor = '#0d9488';
+let currentSubjectId = null;
+let currentQuizData = null;
+let quizAnswers = {};
+let questionCounter = 0;
+let uploadedFileData = null;
+let uploadedImageData = null;
+
+function loadData() {
+  const saved = localStorage.getItem('amawiAppData');
+  if (saved) { appData = JSON.parse(saved); }
+}
+
+function saveData() {
+  localStorage.setItem('amawiAppData', JSON.stringify(appData));
+  updateStats();
+  updateRecentActivity();
+}
+
+function generateId() { return 'id_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9); }
+
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 15; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 4 + 2;
+    const colors = ['rgba(13,148,136,0.3)', 'rgba(245,158,11,0.2)', 'rgba(59,130,246,0.2)'];
+    p.style.cssText = `width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*3)]};left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*10}s;`;
+    container.appendChild(p);
+  }
+}
+
+function switchSection(section) {
+  document.querySelectorAll('[id^="section-"]').forEach(s => s.style.display = 'none');
+  document.getElementById('section-' + section).style.display = 'block';
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll(`.nav-item[data-section="${section}"]`).forEach(n => n.classList.add('active'));
+  document.querySelectorAll('.mobile-nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll(`.mobile-nav-item[data-section="${section}"]`).forEach(n => n.classList.add('active'));
+  if (section === 'classes') renderClasses();
+  if (section === 'interact') renderPosts();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openModal(id) { document.getElementById(id).classList.add('active'); }
+function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+function showToast(message, type = 'success') {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+  const colors = { success: 'var(--success)', error: 'var(--danger)', info: 'var(--info)' };
+  toast.className = 'toast';
+  toast.innerHTML = `<i class="fas ${icons[type]}" style="color:${colors[type]};font-size:18px;"></i> ${message}`;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+function updateStats() {
+  const classCount = appData.classes.length;
+  let subjectCount = 0, contentCount = 0;
+  appData.classes.forEach(c => {
+    subjectCount += c.subjects.length;
+    c.subjects.forEach(s => {
+      contentCount += (s.summaries?.length || 0) + (s.media?.length || 0) + (s.notes?.length || 0) + (s.quizzes?.length || 0);
+    });
+  });
+  animateCounter('stat-classes', classCount);
+  animateCounter('stat-subjects', subjectCount);
+  animateCounter('stat-content', contentCount);
+  animateCounter('stat-comments', appData.posts.length);
+}
+
+function animateCounter(id, target) {
+  const el = document.getElementById(id);
+  const current = parseInt(el.textContent) || 0;
+  const diff = target - current;
+  const steps = 20;
+  let step = 0;
+  const timer = setInterval(() => {
+    step++;
+    el.textContent = Math.round(current + (diff * step / steps));
+    if (step >= steps) { el.textContent = target; clearInterval(timer); }
+  }, 30);
+}
+
+function addActivity(text, icon, color) {
+  appData.activities.unshift({ text, icon, color, time: Date.now() });
+  if (appData.activities.length > 10) appData.activities.pop();
+  saveData();
+}
+
+function updateRecentActivity() {
+  const container = document.getElementById('recentActivity');
+  if (appData.activities.length === 0) {
+    container.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text-secondary);"><i class="fas fa-inbox" style="font-size:32px;margin-bottom:10px;display:block;"></i>لا توجد نشاطات بعد - ابدأ بإضافة صف ومادة</div>`;
+    return;
+  }
+  container.innerHTML = appData.activities.map(a => {
+    const timeAgo = getTimeAgo(a.time);
+    return `<div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(15,23,42,0.4);">
+      <div style="width:36px;height:36px;border-radius:10px;background:${a.color}20;display:flex;align-items:center;justify-content:center;"><i class="fas ${a.icon}" style="color:${a.color};font-size:14px;"></i></div>
+      <div style="flex:1;"><div style="font-size:14px;font-weight:600;">${a.text}</div><div style="font-size:11px;color:var(--text-secondary);">${timeAgo}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function getTimeAgo(timestamp) {
+  const diff = Date.now() - timestamp;
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'الآن';
+  if (mins < 60) return `منذ ${mins} دقيقة`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `منذ ${hours} ساعة`;
+  const days = Math.floor(hours / 24);
+  return `منذ ${days} يوم`;
+}
+
+// ========== Class Management ==========
+function addClass() {
+  const name = document.getElementById('className').value.trim();
+  const section = document.getElementById('classSection').value.trim();
+  const notes = document.getElementById('classNotes').value.trim();
+  if (!name) { showToast('يرجى إدخال اسم الصف', 'error'); return; }
+  const newClass = { id: generateId(), name, section, notes, subjects: [], createdAt: Date.now() };
+  appData.classes.push(newClass);
+  addActivity(`تم إضافة الصف: ${name} ${section}`, 'fa-school', 'var(--primary-light)');
+  saveData();
+  closeModal('classModal');
+  document.getElementById('className').value = '';
+  document.getElementById('classSection').value = '';
+  document.getElementById('classNotes').value = '';
+  renderClasses();
+  showToast('تم إضافة الصف بنجاح');
+}
+
+function deleteClass(classId) {
+  if (!confirm('هل أنت متأكد من حذف هذا الصف وجميع المواد بداخله؟')) return;
+  const cls = appData.classes.find(c => c.id === classId);
+  appData.classes = appData.classes.filter(c => c.id !== classId);
+  addActivity(`تم حذف الصف: ${cls?.name || ''}`, 'fa-trash', 'var(--danger)');
+  saveData(); renderClasses(); showToast('تم حذف الصف', 'info');
+}
+
+function renderClasses() {
+  const container = document.getElementById('classesContainer');
+  if (appData.classes.length === 0) {
+    container.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--text-secondary);"><i class="fas fa-school" style="font-size:48px;margin-bottom:16px;display:block;opacity:0.3;"></i><div style="font-size:18px;font-weight:700;margin-bottom:8px;">لا توجد صفوف بعد</div><div style="font-size:14px;">ابدأ بإضافة صف دراسي جديد</div></div>`;
+    return;
+  }
+  container.innerHTML = appData.classes.map(cls => {
+    const subjectCount = cls.subjects.length;
+    let contentCount = 0;
+    cls.subjects.forEach(s => { contentCount += (s.summaries?.length||0)+(s.media?.length||0)+(s.notes?.length||0)+(s.quizzes?.length||0); });
+    return `<div class="glass-card" style="padding:24px;position:relative;">
+      <div class="card-shine"></div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h3 style="font-size:20px;font-weight:800;margin-bottom:4px;"><i class="fas fa-school" style="color:var(--primary-light);margin-left:8px;"></i>${cls.name} ${cls.section ? '- ' + cls.section : ''}</h3>
+          ${cls.notes ? `<div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">${cls.notes}</div>` : ''}
+          <div style="display:flex;gap:10px;margin-top:10px;">
+            <span class="badge badge-primary"><i class="fas fa-book" style="margin-left:4px;"></i> ${subjectCount} مادة</span>
+            <span class="badge badge-info"><i class="fas fa-file" style="margin-left:4px;"></i> ${contentCount} محتوى</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-accent" onclick="openSubjectModal('${cls.id}')"><i class="fas fa-plus"></i> مادة</button>
+          <button class="btn-danger" onclick="deleteClass('${cls.id}')"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+      ${cls.subjects.length > 0 ? `<div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">${cls.subjects.map(sub => `<div onclick="openSubjectDetail('${cls.id}','${sub.id}')" style="background:rgba(15,23,42,0.6);border:1px solid ${sub.color}40;border-radius:14px;padding:16px;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.borderColor='${sub.color}';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='${sub.color}40';this.style.transform='none'">
+        <div style="position:absolute;top:0;right:0;width:4px;height:100%;background:${sub.color};border-radius:0 2px 2px 0;"></div>
+        <div style="padding-right:12px;">
+          <div style="font-size:15px;font-weight:700;margin-bottom:4px;color:${sub.color};"><i class="fas fa-book" style="margin-left:6px;"></i>${sub.name}</div>
+          ${sub.desc ? `<div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">${sub.desc}</div>` : ''}
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            ${sub.summaries?.length ? `<span class="badge" style="background:${sub.color}15;color:${sub.color};font-size:10px;padding:2px 8px;">${sub.summaries.length} ملخص</span>` : ''}
+            ${sub.media?.length ? `<span class="badge" style="background:${sub.color}15;color:${sub.color};font-size:10px;padding:2px 8px;">${sub.media.length} صورة/فيديو</span>` : ''}
+            ${sub.notes?.length ? `<span class="badge" style="background:${sub.color}15;color:${sub.color};font-size:10px;padding:2px 8px;">${sub.notes.length} تلخيص</span>` : ''}
+            ${sub.quizzes?.length ? `<span class="badge" style="background:${sub.color}15;color:${sub.color};font-size:10px;padding:2px 8px;">${sub.quizzes.length} اختبار</span>` : ''}
+          </div>
+        </div>
+      </div>`).join('')}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ========== Subject Management ==========
+function openSubjectModal(classId) {
+  document.getElementById('subjectClassId').value = classId;
+  document.getElementById('subjectName').value = '';
+  document.getElementById('subjectDesc').value = '';
+  selectColor('#0d9488');
+  openModal('subjectModal');
+}
+
+function selectColor(color) {
+  selectedSubjectColor = color;
+  document.querySelectorAll('.color-opt').forEach(c => { c.style.borderColor = c.dataset.color === color ? 'white' : 'transparent'; });
+}
+
+function addSubject() {
+  const classId = document.getElementById('subjectClassId').value;
+  const name = document.getElementById('subjectName').value.trim();
+  const desc = document.getElementById('subjectDesc').value.trim();
+  if (!name) { showToast('يرجى إدخال اسم المادة', 'error'); return; }
+  const cls = appData.classes.find(c => c.id === classId);
+  if (!cls) return;
+  cls.subjects.push({ id: generateId(), name, desc, color: selectedSubjectColor, summaries: [], media: [], notes: [], quizzes: [], createdAt: Date.now() });
+  addActivity(`تم إضافة مادة: ${name} في ${cls.name}`, 'fa-book', selectedSubjectColor);
+  saveData(); closeModal('subjectModal'); renderClasses(); showToast('تم إضافة المادة بنجاح');
+}
+
+function deleteSubject(classId, subjectId) {
+  if (!confirm('هل أنت متأكد من حذف هذه المادة؟')) return;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  cls.subjects = cls.subjects.filter(s => s.id !== subjectId);
+  addActivity(`تم حذف مادة: ${sub?.name || ''}`, 'fa-trash', 'var(--danger)');
+  saveData(); switchSection('classes'); showToast('تم حذف المادة', 'info');
+}
+
+function openSubjectDetail(classId, subjectId) {
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  currentSubjectId = { classId, subjectId };
+  document.querySelectorAll('[id^="section-"]').forEach(s => s.style.display = 'none');
+  document.getElementById('section-subject').style.display = 'block';
+  renderSubjectDetail(cls, sub);
+}
+
+function renderSubjectDetail(cls, sub) {
+  const container = document.getElementById('subjectDetail');
+  const summaryCount = sub.summaries?.length || 0;
+  const mediaCount = sub.media?.length || 0;
+  const noteCount = sub.notes?.length || 0;
+  const quizCount = sub.quizzes?.length || 0;
+  container.innerHTML = `
+    <div class="glass-card" style="padding:28px;margin-bottom:20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;right:0;width:6px;height:100%;background:${sub.color};border-radius:0 3px 3px 0;"></div>
+      <div class="card-shine"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-right:14px;">
+        <div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;"><i class="fas fa-school" style="margin-left:4px;"></i> ${cls.name} ${cls.section ? '- ' + cls.section : ''}</div>
+          <h2 style="font-size:26px;font-weight:900;color:${sub.color};"><i class="fas fa-book" style="margin-left:10px;"></i>${sub.name}</h2>
+          ${sub.desc ? `<div style="font-size:14px;color:var(--text-secondary);margin-top:6px;">${sub.desc}</div>` : ''}
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+            <span class="badge" style="background:${sub.color}20;color:${sub.color};"><i class="fas fa-file-alt" style="margin-left:4px;"></i> ${summaryCount} ملخص</span>
+            <span class="badge" style="background:${sub.color}20;color:${sub.color};"><i class="fas fa-images" style="margin-left:4px;"></i> ${mediaCount} صورة/فيديو</span>
+            <span class="badge" style="background:${sub.color}20;color:${sub.color};"><i class="fas fa-sticky-note" style="margin-left:4px;"></i> ${noteCount} تلخيص</span>
+            <span class="badge" style="background:${sub.color}20;color:${sub.color};"><i class="fas fa-question-circle" style="margin-left:4px;"></i> ${quizCount} اختبار</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn-ghost" onclick="switchSection('classes')"><i class="fas fa-arrow-right"></i> رجوع</button>
+          <button class="btn-danger" onclick="deleteSubject('${cls.id}','${sub.id}')"><i class="fas fa-trash"></i> حذف المادة</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+      <div class="tab-btn active" onclick="switchSubjectTab('summaries',this)" data-tab="summaries"><i class="fas fa-file-alt"></i> الملخصات</div>
+      <div class="tab-btn" onclick="switchSubjectTab('media',this)" data-tab="media"><i class="fas fa-images"></i> الصور والإنجازات</div>
+      <div class="tab-btn" onclick="switchSubjectTab('notes',this)" data-tab="notes"><i class="fas fa-sticky-note"></i> التلخيصات</div>
+      <div class="tab-btn" onclick="switchSubjectTab('quizzes',this)" data-tab="quizzes"><i class="fas fa-question-circle"></i> الاختبارات</div>
+    </div>
+    <div id="tab-summaries" class="tab-content">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h3 style="font-size:18px;font-weight:700;color:${sub.color};"><i class="fas fa-file-alt" style="margin-left:8px;"></i>الملخصات والملفات</h3>
+        <button class="btn-primary" onclick="openSummaryModal('${cls.id}','${sub.id}')" style="font-size:13px;padding:8px 18px;"><i class="fas fa-plus"></i> إضافة ملخص</button>
+      </div>
+      <div id="summariesList">${renderSummaries(sub)}</div>
+    </div>
+    <div id="tab-media" class="tab-content" style="display:none;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h3 style="font-size:18px;font-weight:700;color:${sub.color};"><i class="fas fa-images" style="margin-left:8px;"></i>الصور والفيديوهات والإنجازات</h3>
+        <button class="btn-primary" onclick="openMediaModal('${cls.id}','${sub.id}')" style="font-size:13px;padding:8px 18px;"><i class="fas fa-plus"></i> إضافة</button>
+      </div>
+      <div id="mediaList">${renderMedia(sub)}</div>
+    </div>
+    <div id="tab-notes" class="tab-content" style="display:none;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h3 style="font-size:18px;font-weight:700;color:${sub.color};"><i class="fas fa-sticky-note" style="margin-left:8px;"></i>التلخيصات والملاحظات</h3>
+        <button class="btn-primary" onclick="openNoteModal('${cls.id}','${sub.id}')" style="font-size:13px;padding:8px 18px;"><i class="fas fa-plus"></i> إضافة تلخيص</button>
+      </div>
+      <div id="notesList">${renderNotes(sub)}</div>
+    </div>
+    <div id="tab-quizzes" class="tab-content" style="display:none;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <h3 style="font-size:18px;font-weight:700;color:${sub.color};"><i class="fas fa-question-circle" style="margin-left:8px;"></i>الاختبارات القصيرة</h3>
+        <button class="btn-primary" onclick="openQuizModal('${cls.id}','${sub.id}')" style="font-size:13px;padding:8px 18px;"><i class="fas fa-plus"></i> إنشاء اختبار</button>
+      </div>
+      <div id="quizzesList">${renderQuizzes(sub, cls)}</div>
+    </div>`;
+}
+
+function switchSubjectTab(tab, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  document.getElementById('tab-' + tab).style.display = 'block';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ========== Summaries ==========
+function openSummaryModal(classId, subjectId) {
+  document.getElementById('summarySubjectId').value = subjectId;
+  document.getElementById('summaryTitle').value = '';
+  document.getElementById('summaryType').value = 'summary';
+  document.getElementById('summaryDesc').value = '';
+  document.getElementById('summaryFileName').textContent = 'لم يتم اختيار ملف';
+  uploadedFileData = null;
+  openModal('summaryModal');
+}
+
+function handleFileUpload(input, labelId) {
+  const file = input.files[0];
+  if (file) {
+    document.getElementById(labelId).textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = function(e) { uploadedFileData = { name: file.name, data: e.target.result, type: file.type, size: file.size }; };
+    reader.readAsDataURL(file);
+  }
+}
+
+function addSummary() {
+  const subjectId = document.getElementById('summarySubjectId').value;
+  const title = document.getElementById('summaryTitle').value.trim();
+  const type = document.getElementById('summaryType').value;
+  const desc = document.getElementById('summaryDesc').value.trim();
+  if (!title) { showToast('يرجى إدخال عنوان الملخص', 'error'); return; }
+  const cls = appData.classes.find(c => c.id === currentSubjectId?.classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  if (!sub.summaries) sub.summaries = [];
+  sub.summaries.push({ id: generateId(), title, type, desc, file: uploadedFileData, createdAt: Date.now() });
+  addActivity(`تم إضافة ملخص: ${title} في ${sub.name}`, 'fa-file-alt', sub.color);
+  saveData(); closeModal('summaryModal'); renderSubjectDetail(cls, sub); showToast('تم إضافة الملخص بنجاح');
+}
+
+function deleteSummary(summaryId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  sub.summaries = sub.summaries.filter(s => s.id !== summaryId);
+  saveData(); renderSubjectDetail(cls, sub); showToast('تم حذف الملخص', 'info');
+}
+
+function renderSummaries(sub) {
+  if (!sub.summaries?.length) {
+    return `<div style="text-align:center;padding:40px;color:var(--text-secondary);"><i class="fas fa-file-alt" style="font-size:36px;margin-bottom:10px;display:block;opacity:0.3;"></i><div style="font-weight:600;">لا توجد ملخصات بعد</div></div>`;
+  }
+  const typeIcons = { summary: 'fa-file-alt', worksheet: 'fa-clipboard-list', exam: 'fa-file-signature', solution: 'fa-check-square', other: 'fa-paperclip' };
+  const typeNames = { summary: 'ملخص', worksheet: 'ورقة عمل', exam: 'امتحان', solution: 'حلول', other: 'أخرى' };
+  return sub.summaries.map(s => `<div class="file-item" style="margin-bottom:10px;">
+    <div style="width:42px;height:42px;border-radius:10px;background:${sub.color}15;display:flex;align-items:center;justify-content:center;"><i class="fas ${typeIcons[s.type]||'fa-file'}" style="color:${sub.color};font-size:16px;"></i></div>
+    <div style="flex:1;">
+      <div style="font-size:15px;font-weight:700;">${s.title}</div>
+      <div style="font-size:12px;color:var(--text-secondary);display:flex;gap:8px;margin-top:2px;">
+        <span>${typeNames[s.type]||s.type}</span>
+        ${s.file ? `<span>· ${s.file.name}</span>` : ''}
+        <span>· ${getTimeAgo(s.createdAt)}</span>
+      </div>
+      ${s.desc ? `<div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">${s.desc}</div>` : ''}
+    </div>
+    <div style="display:flex;gap:6px;">
+      ${s.file ? `<button class="btn-ghost" onclick="downloadFile('${s.id}')" style="padding:6px 12px;font-size:12px;"><i class="fas fa-download"></i></button>` : ''}
+      <button class="btn-danger" onclick="deleteSummary('${s.id}')" style="padding:6px 12px;font-size:12px;"><i class="fas fa-trash"></i></button>
+    </div>
+  </div>`).join('');
+}
+
+function downloadFile(summaryId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  const summary = sub?.summaries.find(s => s.id === summaryId);
+  if (summary?.file?.data) {
+    const a = document.createElement('a');
+    a.href = summary.file.data; a.download = summary.file.name; a.click();
+    showToast('جاري تحميل الملف...', 'info');
+  }
+}
+
+// ========== Media ==========
+function openMediaModal(classId, subjectId) {
+  document.getElementById('imageSubjectId').value = subjectId;
+  document.getElementById('mediaTitle').value = '';
+  document.getElementById('mediaDesc').value = '';
+  document.getElementById('mediaFileName').textContent = 'لم يتم اختيار صورة';
+  document.getElementById('imagePreview').style.display = 'none';
+  document.getElementById('mediaType').value = 'image';
+  document.getElementById('videoUrlArea').style.display = 'none';
+  document.getElementById('imageUploadArea').style.display = 'block';
+  uploadedImageData = null;
+  openModal('imageModal');
+}
+
+document.getElementById('mediaType').addEventListener('change', function() {
+  if (this.value === 'video') {
+    document.getElementById('imageUploadArea').style.display = 'none';
+    document.getElementById('videoUrlArea').style.display = 'block';
+  } else {
+    document.getElementById('imageUploadArea').style.display = 'block';
+    document.getElementById('videoUrlArea').style.display = 'none';
+  }
+});
+
+function handleImageUpload(input) {
+  const file = input.files[0];
+  if (file) {
+    document.getElementById('mediaFileName').textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      uploadedImageData = e.target.result;
+      document.getElementById('imgPreview').src = e.target.result;
+      document.getElementById('imagePreview').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function addMedia() {
+  const subjectId = document.getElementById('imageSubjectId').value;
+  const type = document.getElementById('mediaType').value;
+  const title = document.getElementById('mediaTitle').value.trim();
+  const desc = document.getElementById('mediaDesc').value.trim();
+  const videoUrl = document.getElementById('videoUrl').value.trim();
+  if (!title) { showToast('يرجى إدخال العنوان', 'error'); return; }
+  if (type === 'video' && !videoUrl) { showToast('يرجى إدخال رابط الفيديو', 'error'); return; }
+  if (type === 'image' && !uploadedImageData) { showToast('يرجى رفع صورة', 'error'); return; }
+  const cls = appData.classes.find(c => c.id === currentSubjectId?.classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  if (!sub.media) sub.media = [];
+  sub.media.push({ id: generateId(), type, title, desc, imageData: type === 'image' ? uploadedImageData : null, videoUrl: type === 'video' ? videoUrl : null, createdAt: Date.now() });
+  addActivity(`تم إضافة ${type==='video'?'فيديو':type==='achievement'?'إنجاز':'صورة'}: ${title}`, 'fa-image', sub.color);
+  saveData(); closeModal('imageModal'); renderSubjectDetail(cls, sub); showToast('تمت الإضافة بنجاح');
+}
+
+function deleteMedia(mediaId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  sub.media = sub.media.filter(m => m.id !== mediaId);
+  saveData(); renderSubjectDetail(cls, sub); showToast('تم الحذف', 'info');
+}
+
+function renderMedia(sub) {
+  if (!sub.media?.length) {
+    return `<div style="text-align:center;padding:40px;color:var(--text-secondary);"><i class="fas fa-images" style="font-size:36px;margin-bottom:10px;display:block;opacity:0.3;"></i><div style="font-weight:600;">لا توجد صور أو فيديوهات بعد</div></div>`;
+  }
+  return `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;">${sub.media.map(m => {
+    if (m.type === 'video') {
+      const videoId = extractYouTubeId(m.videoUrl);
+      return `<div class="glass-card" style="padding:0;overflow:hidden;">
+        <div style="position:relative;padding-top:56.25%;background:#000;"><iframe src="https://www.youtube.com/embed/${videoId}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe></div>
+        <div style="padding:14px;"><div style="font-size:14px;font-weight:700;">${m.title}</div>
+        ${m.desc?`<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${m.desc}</div>`:''}
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <span class="badge badge-danger" style="font-size:10px;"><i class="fas fa-video" style="margin-left:3px;"></i> فيديو</span>
+          <button class="btn-danger" onclick="deleteMedia('${m.id}')" style="padding:4px 10px;font-size:11px;"><i class="fas fa-trash"></i></button>
+        </div></div></div>`;
+    }
+    return `<div class="gallery-item">
+      <img src="${m.imageData}" alt="${m.title}" onclick="openLightbox('${m.imageData}')">
+      <div class="gallery-overlay">
+        <div style="font-size:13px;font-weight:700;color:white;">${m.title}</div>
+        ${m.type==='achievement'?`<div style="font-size:11px;color:var(--accent-light);"><i class="fas fa-trophy" style="margin-left:4px;"></i> إنجاز</div>`:''}
+      </div>
+      <button class="btn-danger" onclick="event.stopPropagation();deleteMedia('${m.id}')" style="position:absolute;top:8px;left:8px;padding:4px 8px;font-size:10px;border-radius:8px;opacity:0.8;"><i class="fas fa-trash"></i></button>
+      ${m.type==='achievement'?`<div style="position:absolute;top:8px;right:8px;background:var(--accent);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;"><i class="fas fa-trophy"></i></div>`:''}
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function extractYouTubeId(url) {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&]+)/);
+  return match ? match[1] : '';
+}
+
+// ========== Notes ==========
+function openNoteModal(classId, subjectId) {
+  document.getElementById('noteSubjectId').value = subjectId;
+  document.getElementById('noteTitle').value = '';
+  document.getElementById('noteContent').value = '';
+  openModal('noteModal');
+}
+
+function addNote() {
+  const subjectId = document.getElementById('noteSubjectId').value;
+  const title = document.getElementById('noteTitle').value.trim();
+  const content = document.getElementById('noteContent').value.trim();
+  if (!title || !content) { showToast('يرجى إدخال العنوان والمحتوى', 'error'); return; }
+  const cls = appData.classes.find(c => c.id === currentSubjectId?.classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  if (!sub.notes) sub.notes = [];
+  sub.notes.push({ id: generateId(), title, content, createdAt: Date.now() });
+  addActivity(`تم إضافة تلخيص: ${title} في ${sub.name}`, 'fa-sticky-note', sub.color);
+  saveData(); closeModal('noteModal'); renderSubjectDetail(cls, sub); showToast('تم إضافة التلخيص بنجاح');
+}
+
+function deleteNote(noteId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  sub.notes = sub.notes.filter(n => n.id !== noteId);
+  saveData(); renderSubjectDetail(cls, sub); showToast('تم الحذف', 'info');
+}
+
+function renderNotes(sub) {
+  if (!sub.notes?.length) {
+    return `<div style="text-align:center;padding:40px;color:var(--text-secondary);"><i class="fas fa-sticky-note" style="font-size:36px;margin-bottom:10px;display:block;opacity:0.3;"></i><div style="font-weight:600;">لا توجد تلخيصات بعد</div></div>`;
+  }
+  return sub.notes.map(n => `<div class="glass-card" style="padding:20px;margin-bottom:12px;border-right:4px solid ${sub.color};">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <h4 style="font-size:16px;font-weight:800;color:${sub.color};"><i class="fas fa-sticky-note" style="margin-left:8px;"></i>${n.title}</h4>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span style="font-size:11px;color:var(--text-secondary);">${getTimeAgo(n.createdAt)}</span>
+        <button class="btn-danger" onclick="deleteNote('${n.id}')" style="padding:4px 10px;font-size:11px;"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    <div style="font-size:14px;line-height:1.8;color:var(--text-primary);white-space:pre-wrap;background:rgba(15,23,42,0.5);padding:14px;border-radius:10px;">${n.content}</div>
+  </div>`).join('');
+}
+
+// ========== Quizzes ==========
+function openQuizModal(classId, subjectId) {
+  document.getElementById('quizSubjectId').value = subjectId;
+  document.getElementById('quizTitle').value = '';
+  document.getElementById('quizDuration').value = '10';
+  document.getElementById('questionsContainer').innerHTML = '';
+  questionCounter = 0;
+  addQuestionField();
+  openModal('quizModal');
+}
+
+function addQuestionField() {
+  questionCounter++;
+  const qId = 'q_' + questionCounter;
+  const container = document.getElementById('questionsContainer');
+  const qDiv = document.createElement('div');
+  qDiv.style.cssText = 'background:rgba(15,23,42,0.6);border:1px solid rgba(71,85,105,0.4);border-radius:14px;padding:18px;';
+  qDiv.id = qId;
+  qDiv.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <span style="font-size:14px;font-weight:700;color:var(--info);">السؤال ${questionCounter}</span>
+      <button class="btn-ghost" onclick="this.parentElement.parentElement.remove()" style="padding:4px 10px;font-size:11px;"><i class="fas fa-times"></i></button>
+    </div>
+    <input type="text" class="input-field q-text" placeholder="نص السؤال" style="margin-bottom:10px;" data-qnum="${questionCounter}">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:6px;"><input type="radio" name="correct_${questionCounter}" value="1" style="accent-color:var(--primary);width:18px;height:18px;"><input type="text" class="input-field q-opt" placeholder="الخيار 1" style="padding:8px 12px;font-size:13px;" data-qnum="${questionCounter}" data-opt="1"></div>
+      <div style="display:flex;align-items:center;gap:6px;"><input type="radio" name="correct_${questionCounter}" value="2" style="accent-color:var(--primary);width:18px;height:18px;"><input type="text" class="input-field q-opt" placeholder="الخيار 2" style="padding:8px 12px;font-size:13px;" data-qnum="${questionCounter}" data-opt="2"></div>
+      <div style="display:flex;align-items:center;gap:6px;"><input type="radio" name="correct_${questionCounter}" value="3" style="accent-color:var(--primary);width:18px;height:18px;"><input type="text" class="input-field q-opt" placeholder="الخيار 3" style="padding:8px 12px;font-size:13px;" data-qnum="${questionCounter}" data-opt="3"></div>
+      <div style="display:flex;align-items:center;gap:6px;"><input type="radio" name="correct_${questionCounter}" value="4" style="accent-color:var(--primary);width:18px;height:18px;"><input type="text" class="input-field q-opt" placeholder="الخيار 4" style="padding:8px 12px;font-size:13px;" data-qnum="${questionCounter}" data-opt="4"></div>
+    </div>`;
+  container.appendChild(qDiv);
+}
+
+function addQuiz() {
+  const subjectId = document.getElementById('quizSubjectId').value;
+  const title = document.getElementById('quizTitle').value.trim();
+  const duration = parseInt(document.getElementById('quizDuration').value) || 10;
+  if (!title) { showToast('يرجى إدخال عنوان الاختبار', 'error'); return; }
+  const questions = [];
+  const qTexts = document.querySelectorAll('.q-text');
+  let valid = true;
+  qTexts.forEach(qEl => {
+    const qNum = qEl.dataset.qnum;
+    const text = qEl.value.trim();
+    if (!text) { valid = false; return; }
+    const options = [];
+    const opts = document.querySelectorAll(`.q-opt[data-qnum="${qNum}"]`);
+    opts.forEach(o => { options.push(o.value.trim()); });
+    if (options.some(o => !o)) { valid = false; return; }
+    const correctEl = document.querySelector(`input[name="correct_${qNum}"]:checked`);
+    const correct = correctEl ? parseInt(correctEl.value) : 0;
+    questions.push({ text, options, correct });
+  });
+  if (!valid || questions.length === 0) { showToast('يرجى ملء جميع حقول الأسئلة والخيارات وتحديد الإجابة الصحيحة', 'error'); return; }
+  const cls = appData.classes.find(c => c.id === currentSubjectId?.classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  if (!sub.quizzes) sub.quizzes = [];
+  sub.quizzes.push({ id: generateId(), title, duration, questions, createdAt: Date.now() });
+  addActivity(`تم إنشاء اختبار: ${title} في ${sub.name}`, 'fa-question-circle', sub.color);
+  saveData(); closeModal('quizModal'); renderSubjectDetail(cls, sub); showToast('تم إنشاء الاختبار بنجاح');
+}
+
+function deleteQuiz(quizId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  if (!sub) return;
+  sub.quizzes = sub.quizzes.filter(q => q.id !== quizId);
+  saveData(); renderSubjectDetail(cls, sub); showToast('تم حذف الاختبار', 'info');
+}
+
+function takeQuiz(quizId) {
+  const { classId, subjectId } = currentSubjectId;
+  const cls = appData.classes.find(c => c.id === classId);
+  const sub = cls?.subjects.find(s => s.id === subjectId);
+  const quiz = sub?.quizzes.find(q => q.id === quizId);
+  if (!quiz) return;
+  currentQuizData = quiz;
+  quizAnswers = {};
+  document.getElementById('takeQuizTitle').innerHTML = `<i class="fas fa-question-circle" style="color:var(--info);margin-left:8px;"></i>${quiz.title}`;
+  let html = `<div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;display:flex;gap:12px;">
+    <span><i class="fas fa-clock" style="margin-left:4px;"></i> ${quiz.duration} دقيقة</span>
+    <span><i class="fas fa-list" style="margin-left:4px;"></i> ${quiz.questions.length} سؤال</span>
+  </div>`;
+  quiz.questions.forEach((q, qi) => {
+    html += `<div style="margin-bottom:20px;background:rgba(15,23,42,0.5);border:1px solid rgba(71,85,105,0.3);border-radius:14px;padding:18px;">
+      <div style="font-size:16px;font-weight:700;margin-bottom:12px;"><span style="background:var(--info);color:white;padding:2px 10px;border-radius:8px;font-size:12px;margin-left:8px;">${qi+1}</span>${q.text}</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        ${q.options.map((opt, oi) => `<div class="quiz-option" onclick="selectQuizOption(${qi},${oi},this)" data-qi="${qi}" data-oi="${oi}"><span style="display:inline-flex;width:28px;height:28px;border-radius:50%;background:rgba(71,85,105,0.3);align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-left:10px;">${oi+1}</span>${opt}</div>`).join('')}
+      </div>
+    </div>`;
+  });
+  document.getElementById('takeQuizContent').innerHTML = html;
+  openModal('takeQuizModal');
+}
+
+function selectQuizOption(qi, oi, el) {
+  document.querySelectorAll(`.quiz-option[data-qi="${qi}"]`).forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  quizAnswers[qi] = oi;
+}
+
+function submitQuiz() {
+  if (!currentQuizData) return;
+  let correct = 0;
+  currentQuizData.questions.forEach((q, qi) => {
+    const userAnswer = quizAnswers[qi];
+    document.querySelectorAll(`.quiz-option[data-qi="${qi}"]`).forEach((el, oi) => {
+      el.onclick = null;
+      el.style.cursor = 'default';
+      if (oi === q.correct - 1) el.classList.add('correct');
+      else if (oi === userAnswer) el.classList.add('wrong');
+    });
+    if (userAnswer === q.correct - 1) correct++;
+  });
+  const total = currentQuizData.questions.length;
+  const percent = Math.round((correct / total) * 100);
+  document.getElementById('takeQuizContent').insertAdjacentHTML('afterbegin', `<div style="text-align:center;padding:20px;margin-bottom:20px;background:linear-gradient(135deg,rgba(13,148,136,0.2),rgba(245,158,11,0.15));border-radius:14px;border:1px solid rgba(13,148,136,0.3);">
+    <div style="font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">نتيجتك: ${correct}/${total} (${percent}%)</div>
+  </div>`);
+  showToast(`تم تسليم الاختبار - نتيجتك: ${correct}/${total}`, percent >= 50 ? 'success' : 'error');
+}
+
+function renderQuizzes(sub, cls) {
+  if (!sub.quizzes?.length) {
+    return `<div style="text-align:center;padding:40px;color:var(--text-secondary);"><i class="fas fa-question-circle" style="font-size:36px;margin-bottom:10px;display:block;opacity:0.3;"></i><div style="font-weight:600;">لا توجد اختبارات بعد</div></div>`;
+  }
+  return sub.quizzes.map(q => `<div class="file-item" style="margin-bottom:10px;">
+    <div style="width:42px;height:42px;border-radius:10px;background:${sub.color}15;display:flex;align-items:center;justify-content:center;"><i class="fas fa-question-circle" style="color:${sub.color};font-size:16px;"></i></div>
+    <div style="flex:1;">
+      <div style="font-size:15px;font-weight:700;">${q.title}</div>
+      <div style="font-size:12px;color:var(--text-secondary);display:flex;gap:8px;margin-top:2px;">
+        <span>${q.questions.length} سؤال</span><span>· ${q.duration} دقيقة</span><span>· ${getTimeAgo(q.createdAt)}</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px;">
+      <button class="btn-primary" onclick="takeQuiz('${q.id}')" style="padding:6px 12px;font-size:12px;"><i class="fas fa-play"></i></button>
+      <button class="btn-danger" onclick="deleteQuiz('${q.id}')" style="padding:6px 12px;font-size:12px;"><i class="fas fa-trash"></i></button>
+    </div>
+  </div>`).join('');
+}
+
+// ========== Posts / Interaction ==========
+function addPost() {
+  const content = document.getElementById('postContent').value.trim();
+  const type = document.getElementById('postType').value;
+  if (!content) { showToast('يرجى كتابة محتوى المنشور', 'error'); return; }
+  appData.posts.unshift({ id: generateId(), content, type, time: Date.now(), likes: 0, comments: [] });
+  document.getElementById('postContent').value = '';
+  addActivity(`تم نشر ${type==='announcement'?'إعلان':type==='note'?'ملاحظة':type==='achievement'?'إنجاز':'تذكير'}`, 'fa-bullhorn', 'var(--accent)');
+  saveData(); renderPosts(); showToast('تم النشر بنجاح');
+}
+
+function deletePost(postId) {
+  if (!confirm('هل أنت متأكد من حذف هذا المنشور؟')) return;
+  appData.posts = appData.posts.filter(p => p.id !== postId);
+  saveData(); renderPosts(); showToast('تم حذف المنشور', 'info');
+}
+
+function addComment(postId) {
+  const input = document.getElementById('comment-input-' + postId);
+  const text = input.value.trim();
+  if (!text) return;
+  const post = appData.posts.find(p => p.id === postId);
+  if (!post) return;
+  if (!post.comments) post.comments = [];
+  post.comments.push({ id: generateId(), text, author: 'ولي أمر', time: Date.now() });
+  input.value = '';
+  saveData(); renderPosts(); showToast('تم إضافة التعليق');
+}
+
+function renderPosts() {
+  const container = document.getElementById('postsContainer');
+  if (appData.posts.length === 0) {
+    container.innerHTML = `<div style="text-align:center;padding:40px;color:var(--text-secondary);"><i class="fas fa-comment-slash" style="font-size:36px;margin-bottom:12px;display:block;opacity:0.3;"></i><div style="font-size:16px;font-weight:600;">لا توجد منشورات بعد</div><div style="font-size:13px;">ابدأ بنشر إعلان أو ملاحظة</div></div>`;
+    return;
+  }
+  const typeConfig = {
+    announcement: { icon: 'fa-bullhorn', color: 'var(--primary-light)', label: 'إعلان' },
+    note: { icon: 'fa-sticky-note', color: 'var(--accent)', label: 'ملاحظة' },
+    achievement: { icon: 'fa-trophy', color: '#fbbf24', label: 'إنجاز' },
+    reminder: { icon: 'fa-clock', color: 'var(--info)', label: 'تذكير' }
+  };
+  container.innerHTML = appData.posts.map(p => {
+    const config = typeConfig[p.type] || typeConfig.announcement;
+    return `<div class="glass-card" style="padding:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;">ع</div>
+          <div>
+            <div style="font-weight:700;font-size:14px;">الأستاذ علي عماوي</div>
+            <div style="font-size:11px;color:var(--text-secondary);display:flex;align-items:center;gap:6px;">
+              <span style="color:${config.color};font-weight:700;"><i class="fas ${config.icon}" style="margin-left:3px;"></i>${config.label}</span>
+              <span>·</span><span>${getTimeAgo(p.time)}</span>
+            </div>
+          </div>
+        </div>
+        <button onclick="deletePost('${p.id}')" style="background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:4px;"><i class="fas fa-trash"></i></button>
+      </div>
+      <div style="font-size:15px;line-height:1.8;margin-bottom:14px;white-space:pre-wrap;">${p.content}</div>
+      <div style="border-top:1px solid rgba(71,85,105,0.3);padding-top:12px;">
+        <div style="font-size:13px;font-weight:700;margin-bottom:10px;color:var(--text-secondary);"><i class="fas fa-comments" style="margin-left:6px;"></i>التعليقات (${p.comments?.length || 0})</div>
+        ${(p.comments || []).map(c => `<div class="comment-card" style="margin-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#60a5fa;"><i class="fas fa-user"></i></div>
+            <div style="font-size:12px;font-weight:700;">${c.author}</div>
+            <div style="font-size:11px;color:var(--text-secondary);">${getTimeAgo(c.time)}</div>
+          </div>
+          <div style="font-size:13px;color:var(--text-primary);padding-right:36px;">${c.text}</div>
+        </div>`).join('')}
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <input type="text" id="comment-input-${p.id}" class="input-field" placeholder="اكتب تعليقاً..." style="flex:1;padding:8px 14px;font-size:13px;">
+          <button class="btn-primary" onclick="addComment('${p.id}')" style="padding:8px 14px;font-size:12px;"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ========== Init ==========
+loadData();
+createParticles();
+updateStats();
+updateRecentActivity();
+selectColor('#0d9488');
+</script>
+</body>
+</html>
